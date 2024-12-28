@@ -1,0 +1,31 @@
+metricPort: 5854
+appName: user
+log:
+  level: DEBUG
+grpc:
+  addr: 127.0.0.1:11500
+etcd:
+  addrs:
+    - 192.168.31.208:12624
+  register:
+    name: user
+    addr: 127.0.0.1:11500
+    version: v1
+    weight: 10
+    ttl: 10
+db:
+  mongo:
+    url: mongodb://192.168.31.208:12606
+    userName: misa
+    password: 86c15220
+    minPoolSize: 10
+    maxPoolSize: 100
+    db: msqp
+  redis:
+    addr: 192.168.31.208:12616
+    poolSize: 10
+    minIdleConns: 1
+    password:
+jwt:
+  secret: 123456
+  exp: 7
